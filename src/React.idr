@@ -4,10 +4,10 @@ import Js.Array
 import Js.Object
 import Js.FFI
 
-export
+public export
 data ReactElement : Type
 
-export
+public export
 data ReactClass : Type
 
 export
@@ -15,15 +15,19 @@ text : String -> ReactElement
 text = unsafeCoerce
 
 %foreign (req "react" "(x, props, children)" "createElement(x, props, children)")
-js_createElement : String -> Object -> Array ReactElement -> ReactElement
+js_createElement : ReactClass -> Object -> Array ReactElement -> ReactElement
 
 export
-createElement : String -> List Object -> List ReactElement -> ReactElement
+createElement : ReactClass -> List Object -> List ReactElement -> ReactElement
 createElement x props = js_createElement x (fromList props) . fromList
 
 export
+%foreign (js "x => x")
+classFromTag : String -> ReactClass
+
+export
 el : String -> List Object -> List ReactElement -> ReactElement
-el = createElement
+el tag = createElement (classFromTag tag)
 
 export
 %foreign (req "react" "f" "createElement(f, {}, [])")

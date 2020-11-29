@@ -7,7 +7,8 @@
     "start-server": "parcel public/index.html",
     "watch": "fswatch test src | (while read; do yarn build; done)",
     "release": "rm -rf dist && parcel build --no-source-maps public/index.html",
-    "dev": "yarn build && concurrently 'yarn start-server' 'yarn watch'"
+    "dev": "yarn build && concurrently 'yarn start-server' 'yarn watch'",
+    "install": "idris2 --install react.ipkg"
   },
   "dependencies": {
     "react": "^17.0.1",
