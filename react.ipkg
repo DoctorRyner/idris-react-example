@@ -1,0 +1,6 @@
+package react
+
+sourcedir = "src"
+depends = js
+modules = React
+        , ReactDOM

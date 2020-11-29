@@ -1,0 +1,22 @@
+{
+  "name": "react",
+  "license": "MIT",
+  "scripts": {
+    "build": "idris2 --build react.ipkg && idris2 test/Main.idr --codegen javascript -p react -p js -o index.js",
+    "test": "yarn build && node build/exec/index.js",
+    "start-server": "parcel public/index.html",
+    "watch": "fswatch test src | (while read; do yarn build; done)",
+    "release": "rm -rf dist && parcel build --no-source-maps public/index.html",
+    "dev": "yarn build && concurrently 'yarn start-server' 'yarn watch'"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "concurrently": "^5.3.0",
+    "parcel": "^1.12.4"
+  }
+}
