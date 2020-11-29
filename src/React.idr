@@ -39,3 +39,22 @@ prim__useEffect : IO () -> PrimIO ()
 export
 useEffect : IO () -> IO ()
 useEffect = primIO . prim__useEffect
+
+%foreign (req "react" "(_, x)" "useState(x)")
+prim__useState : a -> PrimIO (Array AnyPtr)
+
+%foreign (js "(_, f, arg) => f(arg)")
+prim__call : AnyPtr -> a -> PrimIO ()
+
+export
+call : AnyPtr -> a -> IO ()
+call f = primIO . prim__call f
+
+export
+useState : a -> IO (a, a -> IO ())
+useState init = do
+  stateArr <- primIO $ prim__useState init
+  pure
+    ( unsafeCoerce $ index 0 stateArr
+    , call $ index 1 stateArr
+    )
