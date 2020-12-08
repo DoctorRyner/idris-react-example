@@ -1,0 +1,6 @@
+{
+    "package": "react",
+    "version": "0.0.1",
+    "depends": ["js-0.0.1"],
+    "sources": ["https://github.com/DoctorRyner/idris-js"]
+}
