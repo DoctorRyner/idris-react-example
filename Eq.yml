@@ -1,0 +1,11 @@
+package: react
+version: 0.0.1
+target: javascript
+
+depends:
+- js-0.0.1
+
+sources:
+- name: idris-js
+  url: https://github.com/DoctorRyner/idris-js
+  version: 5208daf867086d2bb377a4333fd8373eb596fbe0
