@@ -8,4 +8,4 @@ depends:
 sources:
 - name: js-example
   url: https://github.com/DoctorRyner/idris-js-example
-  version: 3150a6ffc1de47fe8c320583272e946b40e6729
+  version: 68484e7c36ae6a1fc4f3ee5a8c695602b823a5af
