@@ -1,11 +1,11 @@
-package: react
+package: react-example
 version: 0.0.1
 target: javascript
 
 depends:
-- js-0.0.1
+- js-example-0.0.1
 
 sources:
-- name: js
-  url: https://github.com/DoctorRyner/idris-js
-  version: 2c9c14e7704748ab3cde9a0c9492439d2f99a4dc
+- name: js-example
+  url: https://github.com/DoctorRyner/idris-js-example
+  version: 3150a6ffc1de47fe8c320583272e946b40e6729

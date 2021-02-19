@@ -1,8 +1,0 @@
-package react-0_0_1
-
-sourcedir = "src"
-
-depends = js-0_0_1
-
-modules = ReactDOM
-        , React

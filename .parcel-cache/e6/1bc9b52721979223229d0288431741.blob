@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>Idris React</title>
+</head>
+<body>
+  <div id="app-root"></div>
+  <script src="/exec.e0518daa.js"></script>
+</body>
+</html>

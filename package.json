@@ -1,20 +1,20 @@
 {
-  "name": "react",
+  "name": "react-example",
   "license": "MIT",
   "scripts": {
-    "build": "idris2 --build react.ipkg && idris2 test/Main.idr --codegen javascript -p react -p js -o index.js",
-    "test": "yarn build && node build/exec/index.js",
+    "build": "sae build && idris2 test/Main.idr --codegen javascript -p react-example.ipkg -p js-example-0_0_1 -o index.js",
     "start-server": "parcel public/index.html",
     "watch": "fswatch test src | (while read; do yarn build; done)",
     "release": "rm -rf dist && parcel build --no-source-maps public/index.html",
     "dev": "yarn build && concurrently 'yarn start-server' 'yarn watch'",
-    "install": "idris2 --install react.ipkg"
+    "install": "sae install"
   },
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "concurrently": "^5.3.0",

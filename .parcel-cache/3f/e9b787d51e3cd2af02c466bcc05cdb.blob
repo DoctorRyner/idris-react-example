@@ -1,0 +1,327 @@
+var helpers = require("../../../../.config/yarn/global/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  var _s = $RefreshSig$();
+
+  class IdrisError extends Error {}
+
+  function __prim_js2idris_array(x) {
+    if (x.length === 0) {
+      return {
+        h: 0
+      };
+    } else {
+      return {
+        h: 1,
+        a1: x[0],
+        a2: __prim_js2idris_array(x.slice(1))
+      };
+    }
+  }
+
+  function __prim_idris2js_array(x) {
+    const result = Array();
+
+    while (x.h != 0) {
+      result.push(x.a1);
+      x = x.a2;
+    }
+
+    return result;
+  }
+
+  const __esPrim_idrisworld = Symbol('idrisworld');
+
+  function Main_view() {
+    //test/Main.idr:9:1--9:20
+    return React_el('div', {
+      h: 0
+    }, {
+      h: 1,
+      a1: React_el('h1', {
+        h: 1,
+        a1: Js$5fObject_$3d$3a(undefined, 'style', Js$5fObject_$3d$3a(undefined, 'color', 'red')),
+        a2: {
+          h: 0
+        }
+      }, {
+        h: 1,
+        a1: React_text('Kek'),
+        a2: {
+          h: 0
+        }
+      }),
+      a2: {
+        h: 1,
+        a1: React_el('p', {
+          h: 0
+        }, {
+          h: 1,
+          a1: React_fc(eta_0 => {
+            React_useEffect(eta_1 => {
+              return Js$5fConsole_log(undefined, 'Hell, Yes!!!!', eta_1);
+            }, eta_0);
+            return React_text('Kevin');
+          }),
+          a2: {
+            h: 0
+          }
+        }),
+        a2: {
+          h: 0
+        }
+      }
+    });
+  }
+
+  _c = Main_view;
+
+  function Main_main(ext_0) {
+    //test/Main.idr:24:1--24:13
+    const imp$5fgen_0 = Js$5fDom_getElementById('app-root', ext_0);
+    return ReactDOM_render(Main_view(), imp$5fgen_0, ext_0);
+  }
+
+  _c2 = Main_main;
+
+  function ReactDOM_render(arg_0, ext_0, ext_1) {
+    //src/ReactDOM.idr:10:1--11:46
+    return ReactDOM_prim$5f$5frender(arg_0, ext_0, ext_1);
+  }
+
+  _c3 = ReactDOM_render;
+
+  const ReactDOM_prim$5f$5frender = (el, root) => require('react-dom').render(el, root);
+
+  _c4 = ReactDOM_prim$5f$5frender;
+
+  function React_useEffect(ext_0, ext_1) {
+    //src/React.idr:39:1--40:27
+    return React_prim$5f$5fuseEffect(ext_0, ext_1);
+  }
+
+  _c5 = React_useEffect;
+
+  function React_text(ext_0) {
+    //src/React.idr:13:1--14:30
+    return Js$5fFFI_unsafeCoerce(undefined, undefined, ext_0);
+  }
+
+  _c6 = React_text;
+
+  const React_prim$5f$5fuseEffect = f => {
+    _s();
+
+    return require('react').useEffect(f);
+  };
+
+  _s(React_prim$5f$5fuseEffect, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+
+  _c7 = React_prim$5f$5fuseEffect;
+
+  const React_js$5fcreateElement = (x, props, children) => require('react').createElement(x, props, children);
+
+  _c8 = React_js$5fcreateElement;
+
+  const React_fc = f => require('react').createElement(f, {}, []);
+
+  _c9 = React_fc;
+
+  function React_el(arg_0, ext_1, ext_0) {
+    //src/React.idr:28:1--29:64
+    return React_createElement(React_classFromTag(arg_0), ext_1, ext_0);
+  }
+
+  _c10 = React_el;
+
+  function React_createElement(arg_0, arg_1, ext_0) {
+    //src/React.idr:20:1--21:79
+    return React_js$5fcreateElement(arg_0, Js$5fObject_fromList(arg_1), Js$5fArray_fromList(undefined, ext_0));
+  }
+
+  _c11 = React_createElement;
+
+  const React_classFromTag = x => x;
+
+  _c12 = React_classFromTag;
+
+  const Js$5fFFI_unsafeCoerce = (_a, _b, x) => x;
+
+  _c13 = Js$5fFFI_unsafeCoerce;
+
+  function PrimIO_case__unsafePerformIO_532(arg_0, arg_1, arg_2, arg_3) {
+    //PrimIO.idr:103:32--104:75
+    return PrimIO_unsafeDestroyWorld(undefined, undefined, arg_3);
+  }
+
+  _c14 = PrimIO_case__unsafePerformIO_532;
+
+  function PrimIO_unsafePerformIO(arg_0, arg_1) {
+    //PrimIO.idr:100:1--101:28
+    return PrimIO_unsafeCreateWorld(undefined, w => {
+      return PrimIO_case__unsafePerformIO_532(undefined, arg_1, undefined, arg_1(w));
+    });
+  }
+
+  _c15 = PrimIO_unsafePerformIO;
+
+  function PrimIO_unsafeDestroyWorld(arg_0, arg_1, arg_2) {
+    //PrimIO.idr:97:1--97:46
+    return arg_2;
+  }
+
+  _c16 = PrimIO_unsafeDestroyWorld;
+
+  function PrimIO_unsafeCreateWorld(arg_0, arg_1) {
+    //PrimIO.idr:94:1--94:53
+    return arg_1(__esPrim_idrisworld);
+  }
+
+  _c17 = PrimIO_unsafeCreateWorld;
+
+  function Js$5fObject_singleton(arg_0, arg_1, arg_2) {
+    //src/Js/Object.idr:17:1--18:34
+    return Js$5fObject_insert(undefined, arg_1, arg_2, Js$5fObject_empty());
+  }
+
+  _c18 = Js$5fObject_singleton;
+
+  const Js$5fObject_merge = xs => Object.assign({}, ...xs);
+
+  _c19 = Js$5fObject_merge;
+
+  const Js$5fObject_insert = (_, key, val, obj) => {
+    obj[key] = val;
+    return obj;
+  };
+
+  _c20 = Js$5fObject_insert;
+
+  function Js$5fObject_fromList(ext_0) {
+    //src/Js/Object.idr:31:1--32:33
+    return Js$5fObject_merge(Js$5fArray_fromList(undefined, ext_0));
+  }
+
+  _c21 = Js$5fObject_fromList;
+
+  const Js$5fObject_empty = () => ({});
+
+  _c22 = Js$5fObject_empty;
+
+  function Js$5fObject_$3d$3a(arg_0, ext_0, ext_1) {
+    //src/Js/Object.idr:23:1--24:29
+    return Js$5fObject_singleton(undefined, ext_0, ext_1);
+  }
+
+  _c23 = Js$5fObject_$3d$3a;
+
+  const Js$5fArray_singleton = (_, x) => [x];
+
+  _c24 = Js$5fArray_singleton;
+
+  function Js$5fArray_fromList(arg_0, arg_1) {
+    //src/Js/Array.idr:46:1--47:29
+    switch (arg_1.h) {
+      case 0:
+        {
+          return Js$5fArray_empty(undefined);
+          break;
+        }
+
+      case 1:
+        {
+          return Js$5fArray_$2b$2b(undefined, Js$5fArray_singleton(undefined, arg_1.a1), Js$5fArray_fromList(undefined, arg_1.a2));
+          break;
+        }
+
+      default:
+        throw new Error('unhandled con case on src/Js/Array.idr:47:12--47:18');
+    }
+  }
+
+  _c25 = Js$5fArray_fromList;
+
+  const Js$5fArray_empty = () => [];
+
+  _c26 = Js$5fArray_empty;
+
+  const Js$5fArray_$2b$2b = (_, xs, ys) => xs.concat(ys);
+
+  _c27 = Js$5fArray_$2b$2b;
+
+  const Js$5fDom_prim$5f$5fgetElementById = x => document.getElementById(x);
+
+  _c28 = Js$5fDom_prim$5f$5fgetElementById;
+
+  function Js$5fDom_getElementById(ext_0, ext_1) {
+    //src/Js/Dom.idr:11:1--12:42
+    return Js$5fDom_prim$5f$5fgetElementById(ext_0, ext_1);
+  }
+
+  _c29 = Js$5fDom_getElementById;
+
+  const Js$5fConsole_prim$5f$5flog = (_, x) => console.log(x);
+
+  _c30 = Js$5fConsole_prim$5f$5flog;
+
+  function Js$5fConsole_log(arg_0, ext_0, ext_1) {
+    //src/Js/Console.idr:8:1--9:17
+    return Js$5fConsole_prim$5f$5flog(undefined, ext_0, ext_1);
+  }
+
+  _c31 = Js$5fConsole_log;
+
+  try {
+    PrimIO_unsafePerformIO(undefined, eta_0 => {
+      return Main_main(eta_0);
+    });
+  } catch (e) {
+    if (e instanceof IdrisError) {
+      console.log('ERROR: ' + e.message);
+    } else {
+      throw e;
+    }
+  }
+
+  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12, _c13, _c14, _c15, _c16, _c17, _c18, _c19, _c20, _c21, _c22, _c23, _c24, _c25, _c26, _c27, _c28, _c29, _c30, _c31;
+
+  $RefreshReg$(_c, "Main_view");
+  $RefreshReg$(_c2, "Main_main");
+  $RefreshReg$(_c3, "ReactDOM_render");
+  $RefreshReg$(_c4, "ReactDOM_prim$5f$5frender");
+  $RefreshReg$(_c5, "React_useEffect");
+  $RefreshReg$(_c6, "React_text");
+  $RefreshReg$(_c7, "React_prim$5f$5fuseEffect");
+  $RefreshReg$(_c8, "React_js$5fcreateElement");
+  $RefreshReg$(_c9, "React_fc");
+  $RefreshReg$(_c10, "React_el");
+  $RefreshReg$(_c11, "React_createElement");
+  $RefreshReg$(_c12, "React_classFromTag");
+  $RefreshReg$(_c13, "Js$5fFFI_unsafeCoerce");
+  $RefreshReg$(_c14, "PrimIO_case__unsafePerformIO_532");
+  $RefreshReg$(_c15, "PrimIO_unsafePerformIO");
+  $RefreshReg$(_c16, "PrimIO_unsafeDestroyWorld");
+  $RefreshReg$(_c17, "PrimIO_unsafeCreateWorld");
+  $RefreshReg$(_c18, "Js$5fObject_singleton");
+  $RefreshReg$(_c19, "Js$5fObject_merge");
+  $RefreshReg$(_c20, "Js$5fObject_insert");
+  $RefreshReg$(_c21, "Js$5fObject_fromList");
+  $RefreshReg$(_c22, "Js$5fObject_empty");
+  $RefreshReg$(_c23, "Js$5fObject_$3d$3a");
+  $RefreshReg$(_c24, "Js$5fArray_singleton");
+  $RefreshReg$(_c25, "Js$5fArray_fromList");
+  $RefreshReg$(_c26, "Js$5fArray_empty");
+  $RefreshReg$(_c27, "Js$5fArray_$2b$2b");
+  $RefreshReg$(_c28, "Js$5fDom_prim$5f$5fgetElementById");
+  $RefreshReg$(_c29, "Js$5fDom_getElementById");
+  $RefreshReg$(_c30, "Js$5fConsole_prim$5f$5flog");
+  $RefreshReg$(_c31, "Js$5fConsole_log");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

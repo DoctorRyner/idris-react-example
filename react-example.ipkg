@@ -1,0 +1,8 @@
+package react-example-0_0_1
+
+sourcedir   = "src"
+
+depends     = js-example-0_0_1
+
+modules     = React
+            , ReactDOM
