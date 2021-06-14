@@ -3,7 +3,7 @@ version: 0.0.1
 target: javascript
 
 depends:
-- js-example-0.0.1
+- js-example == 0.0.1
 
 sources:
 - name: js-example
