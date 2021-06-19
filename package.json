@@ -2,12 +2,11 @@
   "name": "react-example",
   "license": "MIT",
   "scripts": {
-    "build": "sae build && idris2 test/Main.idr --codegen javascript -p react-example.ipkg -p js-example-0_0_1 -o index.js",
+    "build": "sae build && idris2 test/Main.idr --codegen javascript -p react-example -p js-example -o index.js",
     "start-server": "parcel public/index.html",
     "watch": "fswatch test src | (while read; do yarn build; done)",
     "release": "rm -rf dist && parcel build --no-source-maps public/index.html",
-    "dev": "yarn build && concurrently 'yarn start-server' 'yarn watch'",
-    "install": "sae install"
+    "dev": "yarn build && concurrently 'yarn start-server' 'yarn watch'"
   },
   "dependencies": {
     "react": "^17.0.1",
